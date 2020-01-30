@@ -1,0 +1,39 @@
+﻿<Window x:Class="WpfApp15.Profil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp15"
+        mc:Ignorable="d"
+        Title="Profil" Height="450" Width="800">
+    <DockPanel>
+        
+        <TabControl>
+            <TabItem Header="Profil" FontSize="30">
+                <UniformGrid Columns="2">
+                    <Label Content="ID:" FontSize="32"/>
+                    <TextBox Text="{Binding ID,UpdateSourceTrigger=Explicit}" FontSize="32"/>
+                    <Label Content="Ime:" FontSize="32"/>
+                    <TextBox Text="{Binding Ime,UpdateSourceTrigger=Explicit}" FontSize="32"/>
+                    <Label Content="Prezime:" FontSize="32"/>
+                    <TextBox Text="{Binding Prezime,UpdateSourceTrigger=Explicit}" FontSize="32"/>
+                    <Label Content="Mail:" FontSize="32"/>
+                    <TextBox Text="{Binding Mail,UpdateSourceTrigger=Explicit}" FontSize="32"/>
+                    <Label Content="Adresa Stanovanja:" FontSize="32"/>
+                    <TextBox Text="{Binding Adresa_stanovanja,UpdateSourceTrigger=Explicit}" FontSize="32"/>
+                    <Button Content="Odustani" FontSize="42" Name="odust"	/>
+                    <Button Content="OK" FontSize="42" Name="ok"	/>
+                </UniformGrid>
+            </TabItem>
+            <TabItem Header="Istorija" FontSize="30">
+
+            </TabItem>
+            <TabItem Header="Iznajmljeno" FontSize="30">
+                <UniformGrid Columns="2">
+
+
+                </UniformGrid>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
