@@ -22,6 +22,39 @@ namespace WpfApp15
         public Profil()
         {
             InitializeComponent();
+            if (DataContext == null)
+                DataContext = new Knjiga();
         }
+
+        private void ok_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+            this.BindingGroup.CommitEdit();
+            this.Close();
+        }
+
+        private void odust_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dgClanovi_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        //private string pret;
+        //public string Pretraga
+        //{
+        //    get => pret;
+
+        //    set
+        //    {
+        //        pret = value;
+                
+        //        dgProfilIznajmljeno.ItemsSource = 
+                    
+        //    }
+        //}
     }
 }
