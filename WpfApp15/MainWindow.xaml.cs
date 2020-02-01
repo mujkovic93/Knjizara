@@ -31,15 +31,20 @@ namespace WpfApp15
             set
             {
                 pretraga = value;
-
-
+                
                 KB = new KnjizaraBaza();
                 if (string.IsNullOrEmpty(pretraga) || string.IsNullOrWhiteSpace(pretraga))
+                {
                     dgClanovi.ItemsSource = KB.dbClanovi.ToList();
+                    dgKnjiga.ItemsSource = KB.dbKnjiga.ToList();
+                }
                 else
+                {
                     dgClanovi.ItemsSource = KB.dbClanovi.Where(s => s.Ime.ToLower().Contains(pretraga.ToLower()) ||
                                                                       s.Prezime.ToLower().Contains(pretraga.ToLower())).ToList();
-
+                    dgKnjiga.ItemsSource = KB.dbKnjiga.Where(s => s.Autor.ToLower().Contains(pretraga.ToLower()) ||
+                                                                     s.ISBN.ToLower().Contains(pretraga.ToLower())).ToList();
+                }
                 //ObservableCollection<Student> studenti = new ObservableCollection<Student>();
                 //foreach (Student s in db.dbStudenti.Local)
                 //	if (s.Ime.ToLower().Contains(pretraga.ToLower()) ||
