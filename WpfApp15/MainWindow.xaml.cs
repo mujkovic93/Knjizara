@@ -23,20 +23,49 @@ namespace WpfApp15
     public partial class MainWindow : Window
     {
         KnjizaraBaza KB = new KnjizaraBaza();
+
+        private string pretraga;
+        public string Pretraga
+        {
+            get => pretraga;
+            set
+            {
+                pretraga = value;
+
+
+                KB = new KnjizaraBaza();
+                if (string.IsNullOrEmpty(pretraga) || string.IsNullOrWhiteSpace(pretraga))
+                    dgClanovi.ItemsSource = KB.dbClanovi.ToList();
+                else
+                    dgClanovi.ItemsSource = KB.dbClanovi.Where(s => s.Ime.ToLower().Contains(pretraga.ToLower()) ||
+                                                                      s.Prezime.ToLower().Contains(pretraga.ToLower())).ToList();
+
+                //ObservableCollection<Student> studenti = new ObservableCollection<Student>();
+                //foreach (Student s in db.dbStudenti.Local)
+                //	if (s.Ime.ToLower().Contains(pretraga.ToLower()) ||
+                //		s.Prezime.ToLower().Contains(pretraga.ToLower()))
+                //		studenti.Add(s);
+                //dgStudenti.ItemsSource = studenti;
+
+
+
+            }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
             KB.dbKnjiga.ToList();
             KB.dbClanovi.ToList();
-            KB.dbKnjiga.Add(new Knjiga("A001", "Rat", "Irfan", "2020", "Da"));
-            KB.dbKnjiga.Add(new Knjiga("A002", "Peacekeeper", "Ruza", "1950", "Ne"));
-            KB.dbClanovi.Add(new Clanovi("Armin", "Mujkovic", "//","Save Kovacevica 192"));
-          KB.dbClanovi.Add(new Clanovi("Edin", "Kurtanovic", "//", "Stevana Nemanje e/27"));
+          //  KB.dbKnjiga.Add(new Knjiga("A001", "Rat", "Irfan", "2020", "Da"));
+          //  KB.dbKnjiga.Add(new Knjiga("A002", "Peacekeeper", "Ruza", "1950", "Ne"));
+          //  KB.dbClanovi.Add(new Clanovi("Armin", "Mujkovic", "//","Save Kovacevica 192"));
+          //KB.dbClanovi.Add(new Clanovi("Edin", "Kurtanovic", "//", "Stevana Nemanje e/27"));
            KB.SaveChanges();
             
             dgKnjiga.ItemsSource = KB.dbKnjiga.Local;
             dgClanovi.ItemsSource = KB.dbClanovi.Local;
-            
+            txtPretraga.DataContext = this;
 
 
         }
@@ -67,6 +96,11 @@ namespace WpfApp15
                     dgClanovi.ItemsSource = KB.dbClanovi.ToList();
                 }
             
+        }
+
+        private void txtPretraga_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 

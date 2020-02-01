@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp15"
         mc:Ignorable="d"
-        Title="Profil" Height="450" Width="800">
+        Title="Profil" Height="450" Width="800" WindowStyle="None">
     <DockPanel>
         
         <TabControl>
@@ -21,7 +21,7 @@
                     <TextBox Text="{Binding Mail,UpdateSourceTrigger=Explicit}" FontSize="32"/>
                     <Label Content="Adresa Stanovanja:" FontSize="32"/>
                     <TextBox Text="{Binding Adresa_stanovanja,UpdateSourceTrigger=Explicit}" FontSize="32"/>
-                    <Button Content="Odustani" FontSize="42" Name="odust"	/>
+                    <Button Content="Odustani" FontSize="42" Name="odust" Click="odust_Click"	/>
                     <Button Content="OK" FontSize="42" Name="ok"	/>
                 </UniformGrid>
             </TabItem>

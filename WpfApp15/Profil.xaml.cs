@@ -23,5 +23,10 @@ namespace WpfApp15
         {
             InitializeComponent();
         }
+
+        private void odust_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
