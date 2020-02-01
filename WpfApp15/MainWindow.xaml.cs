@@ -36,7 +36,7 @@ namespace WpfApp15
             
             dgKnjiga.ItemsSource = KB.dbKnjiga.Local;
             dgClanovi.ItemsSource = KB.dbClanovi.Local;
-            
+            //sadsadsad;
 
 
         }
