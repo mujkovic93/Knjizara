@@ -41,19 +41,13 @@ namespace WpfApp15
                 else
                 {
                     dgClanovi.ItemsSource = KB.dbClanovi.Where(s => s.Ime.ToLower().Contains(pretraga.ToLower()) ||
-                                                                      s.Prezime.ToLower().Contains(pretraga.ToLower())).ToList();
+                                                                      s.Prezime.ToLower().Contains(pretraga.ToLower()) ||
+                                                                      s.ID.ToString().Contains(pretraga.ToLower())).ToList();
+
                     dgKnjiga.ItemsSource = KB.dbKnjiga.Where(s => s.Autor.ToLower().Contains(pretraga.ToLower()) ||
-                                                                     s.ISBN.ToLower().Contains(pretraga.ToLower())).ToList();
-                }
-                //ObservableCollection<Student> studenti = new ObservableCollection<Student>();
-                //foreach (Student s in db.dbStudenti.Local)
-                //	if (s.Ime.ToLower().Contains(pretraga.ToLower()) ||
-                //		s.Prezime.ToLower().Contains(pretraga.ToLower()))
-                //		studenti.Add(s);
-                //dgStudenti.ItemsSource = studenti;
-
-
-
+                                                                     s.ISBN.ToLower().Contains(pretraga.ToLower()) ||
+                                                                     s.Naziv.ToLower().Contains(pretraga.ToLower())).ToList();
+                }                
             }
         }
 
