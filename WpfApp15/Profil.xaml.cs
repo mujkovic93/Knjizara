@@ -28,5 +28,12 @@ namespace WpfApp15
         {
             this.Close();
         }
+
+        private void ok_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+            this.BindingGroup.CommitEdit();
+            this.Close();
+        }
     }
 }

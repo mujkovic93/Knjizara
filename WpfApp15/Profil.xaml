@@ -36,7 +36,7 @@
                 <UniformGrid Columns="2">
                     <TextBox  ></TextBox>
                     <Label Content=" Trenutno poseduje: " FontSize="42" Height="70" VerticalAlignment="Top"></Label>
-                    <DataGrid Name="dgProfilIznajmljeno" FontSize="32" IsReadOnly="True" SelectionMode="Single" ColumnWidth="*" MouseDoubleClick="dgClanovi_MouseDoubleClick" >
+                    <DataGrid Name="dgProfilIznajmljeno" FontSize="32" IsReadOnly="True" SelectionMode="Single" ColumnWidth="*" >
                         
                     </DataGrid>
                 </UniformGrid>
