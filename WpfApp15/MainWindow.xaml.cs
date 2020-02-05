@@ -73,10 +73,14 @@ namespace WpfApp15
         {
             Izmena novaIzmena = new Izmena();
             novaIzmena.Owner = this;
-            novaIzmena.DataContext = dgKnjiga.SelectedItem;
+            
             if(novaIzmena.ShowDialog() == true)
             {
-               
+                
+                    //KB.dbClanovi.Add(novaIzmena.DataContext as Clanovi);
+                    //KB.SaveChanges();
+                    //Pretraga = null;
+                
             }
         }
 

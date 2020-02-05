@@ -16,7 +16,7 @@
             </StackPanel>
         </StackPanel>
         <TabControl>
-            <TabItem Header="Clanovi" FontSize="32">
+            <TabItem Name="tabClanovi" Header="Clanovi" FontSize="32">
                 <DataGrid Name="dgClanovi" FontSize="32" IsReadOnly="True" SelectionMode="Single" ColumnWidth="*" MouseDoubleClick="dgClanovi_MouseDoubleClick"/>
                 
 

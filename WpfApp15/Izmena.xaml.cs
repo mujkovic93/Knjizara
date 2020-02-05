@@ -23,5 +23,17 @@ namespace WpfApp15
         {
             InitializeComponent();
         }
+
+        private void ok_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+            this.BindingGroup.CommitEdit();
+            this.Close();
+        }
+
+        private void odustani_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

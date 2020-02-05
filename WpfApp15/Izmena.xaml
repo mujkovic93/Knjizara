@@ -6,6 +6,20 @@
         xmlns:local="clr-namespace:WpfApp15"
         mc:Ignorable="d"
         Title="Izmena" Height="450" Width="800">
-    
-        
+    <Window.BindingGroup>
+        <BindingGroup/>
+    </Window.BindingGroup>
+    <UniformGrid Columns="2">
+        <Label Content="Ime:" FontSize="42"/>
+        <TextBox Name="txtNaziv" Text="{Binding Ime, UpdateSourceTrigger=Explicit}"  FontSize="42"/>
+        <Label Content="Prezime:" FontSize="42"/>
+        <TextBox Text="{Binding Prezime, UpdateSourceTrigger=Explicit}" FontSize="42"/>
+        <Label Content="Mail:" FontSize="42"/>
+        <TextBox Text="{Binding Mail, UpdateSourceTrigger=Explicit}" FontSize="42"/>
+        <Label Content="Adresa stanovanja:" FontSize="42"/>
+        <TextBox Text="{Binding Adresa_stanovanja, UpdateSourceTrigger=Explicit}" FontSize="42"/>
+        <Button Content="Odustani" Name="odustani" Click="odustani_Click"	 FontSize="42"/>
+        <Button Content="OK" Name="ok" Click="ok_Click"	 FontSize="42"/>
+    </UniformGrid>
+
 </Window>
