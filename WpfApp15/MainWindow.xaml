@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
         <StackPanel DockPanel.Dock="Top">
-            <TextBox FontSize="42"></TextBox>
+            <TextBox Name="txtPretraga" Text="{Binding Pretraga,UpdateSourceTrigger=PropertyChanged}" FontSize="42" TextChanged="txtPretraga_TextChanged"></TextBox>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Content="Dodaj" FontSize="42" Click="Dodaj_Click"/>
                 <Button Content="Izmeni" FontSize="42"/>
