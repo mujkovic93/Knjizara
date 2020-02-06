@@ -70,6 +70,13 @@ namespace WpfApp15
             this.Close();
         }
 
+        private void Button_Iznajmi(object sender, RoutedEventArgs e)
+        {
+            KB.dbIznajmljeno.Add(new Iznajmi(DataContext as Clanovi, dgBiblioteka.SelectedItem as Knjiga, DateTime.Now));
+            KB.SaveChanges();
+
+        }
+
         
     }
 }

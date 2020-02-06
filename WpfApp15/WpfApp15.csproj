@@ -81,6 +81,7 @@
     <Compile Include="Izmena.xaml.cs">
       <DependentUpon>Izmena.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Iznajmi.cs" />
     <Compile Include="Knjiga.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

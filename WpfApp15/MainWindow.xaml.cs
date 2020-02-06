@@ -124,11 +124,13 @@ namespace WpfApp15
     {
         public DbSet<Knjiga> dbKnjiga { set; get; }
         public DbSet<Clanovi> dbClanovi { set; get; }
+        public DbSet<Iznajmi> dbIznajmljeno { set; get; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Knjiga>().HasKey(k => k.ISBN);
             modelBuilder.Entity<Clanovi>().HasKey(c => c.ID);
+            modelBuilder.Entity<Iznajmi>().HasKey(i => i.ID);
         }
 
 
