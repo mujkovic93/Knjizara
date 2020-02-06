@@ -76,11 +76,11 @@ namespace WpfApp15
             
             if(novaIzmena.ShowDialog() == true)
             {
-                
-                    //KB.dbClanovi.Add(novaIzmena.DataContext as Clanovi);
-                    //KB.SaveChanges();
-                    //Pretraga = null;
-                
+
+                KB.dbClanovi.Add(novaIzmena.DataContext as Clanovi);
+                KB.SaveChanges();
+                Pretraga = null;
+
             }
         }
 

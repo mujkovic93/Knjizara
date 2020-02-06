@@ -22,6 +22,8 @@ namespace WpfApp15
         public Izmena()
         {
             InitializeComponent();
+            if (DataContext == null)
+                DataContext = new Clanovi();
         }
 
         private void ok_Click(object sender, RoutedEventArgs e)
