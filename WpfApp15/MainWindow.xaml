@@ -11,7 +11,6 @@
             <TextBox Name="txtPretraga" Text="{Binding Pretraga,UpdateSourceTrigger=PropertyChanged}" FontSize="42" TextChanged="txtPretraga_TextChanged"></TextBox>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Content="Dodaj" FontSize="42" Click="Dodaj_Click" Margin="0,0,10,0"/>
-                <Button Content="Izmeni" FontSize="42" Margin="0,0,10,0"/>
                 <Button Content="Izbrisi" FontSize="42"/>
             </StackPanel>
         </StackPanel>
@@ -22,7 +21,7 @@
 
             </TabItem>
             <TabItem Header="Knjiga" FontSize="32">
-                <DataGrid Name="dgKnjiga" FontSize="32" IsReadOnly="True" SelectionMode="Single" ColumnWidth="*"/>
+                <DataGrid Name="dgKnjiga" FontSize="32" IsReadOnly="True" SelectionMode="Single" ColumnWidth="*" />
             </TabItem>
         </TabControl>
     </DockPanel>

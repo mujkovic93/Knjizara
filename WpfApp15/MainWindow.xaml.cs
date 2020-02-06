@@ -83,14 +83,26 @@ namespace WpfApp15
 
             }
         }
+        private void Izmeni_Click(object sender, RoutedEventArgs e)
+        {
 
-        
+            if (dgClanovi.SelectedItem != null || dgKnjiga.SelectedItem != null)
+            {
+                Izmena novaIzmena = new Izmena();
+                novaIzmena.DataContext = dgClanovi.SelectedItem;
+                if (novaIzmena.ShowDialog() == true)
+                    KB.SaveChanges();
+            }
+        }
+
+
         private void dgClanovi_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             
                 Profil noviProfil = new Profil();
                 noviProfil.Owner = this;
                 noviProfil.DataContext = dgClanovi.SelectedItem;
+                noviProfil.DataContext = dgKnjiga;
                 if (noviProfil.ShowDialog() == true)
                 {
                     KB.SaveChanges();
@@ -104,7 +116,7 @@ namespace WpfApp15
         private void txtPretraga_TextChanged(object sender, TextChangedEventArgs e)
         {
 
-        }
+        }        
     }
 
 

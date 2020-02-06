@@ -19,9 +19,43 @@ namespace WpfApp15
     /// </summary>
     public partial class Profil : Window
     {
+        KnjizaraBaza KB = new KnjizaraBaza();
+        private string pretraga;
+        public string Pretraga
+        {
+            get => pretraga;
+            set
+            {
+                pretraga = value;
+
+                KB = new KnjizaraBaza();
+                if (string.IsNullOrEmpty(pretraga) || string.IsNullOrWhiteSpace(pretraga))
+                {
+                    
+                    dgBiblioteka.ItemsSource = KB.dbKnjiga.ToList();
+                }
+                else
+                {
+                    
+
+                    dgBiblioteka.ItemsSource = KB.dbKnjiga.Where(s => s.Autor.ToLower().Contains(pretraga.ToLower()) ||
+                                                                     s.ISBN.ToLower().Contains(pretraga.ToLower()) ||
+                                                                     s.Naziv.ToLower().Contains(pretraga.ToLower())).ToList();
+                }
+            }
+        }
         public Profil()
         {
             InitializeComponent();
+
+            KB.dbKnjiga.ToList();
+            dgBiblioteka.ItemsSource = KB.dbKnjiga.Local;
+
+            KB.SaveChanges();
+
+            txtPretraga.DataContext = this;
+
+
         }
 
         private void odust_Click(object sender, RoutedEventArgs e)
@@ -35,5 +69,7 @@ namespace WpfApp15
             this.BindingGroup.CommitEdit();
             this.Close();
         }
+
+        
     }
 }
