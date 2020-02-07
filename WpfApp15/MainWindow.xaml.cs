@@ -56,14 +56,15 @@ namespace WpfApp15
             InitializeComponent();
             KB.dbKnjiga.ToList();
             KB.dbClanovi.ToList();
-          //  KB.dbKnjiga.Add(new Knjiga("A001", "Rat", "Irfan", "2020", "Da"));
-          //  KB.dbKnjiga.Add(new Knjiga("A002", "Peacekeeper", "Ruza", "1950", "Ne"));
-          //  KB.dbClanovi.Add(new Clanovi("Armin", "Mujkovic", "//","Save Kovacevica 192"));
-          //KB.dbClanovi.Add(new Clanovi("Edin", "Kurtanovic", "//", "Stevana Nemanje e/27"));
-           KB.SaveChanges();
-            
+            //KB.dbKnjiga.Add(new Knjiga("A001", "Rat", "Irfan", "2020", "Da"));
+            //KB.dbKnjiga.Add(new Knjiga("A002", "Peacekeeper", "Ruza", "1950", "Ne"));
+            //KB.dbClanovi.Add(new Clanovi("Armin", "Mujkovic", "//", "Save Kovacevica 192"));
+            //KB.dbClanovi.Add(new Clanovi("Edin", "Kurtanovic", "//", "Stevana Nemanje e/27"));
+
+            KB.SaveChanges();            
             dgKnjiga.ItemsSource = KB.dbKnjiga.Local;
             dgClanovi.ItemsSource = KB.dbClanovi.Local;
+
             txtPretraga.DataContext = this;
 
 
@@ -76,7 +77,6 @@ namespace WpfApp15
             
             if(novaIzmena.ShowDialog() == true)
             {
-
                 KB.dbClanovi.Add(novaIzmena.DataContext as Clanovi);
                 KB.SaveChanges();
                 Pretraga = null;
@@ -102,7 +102,6 @@ namespace WpfApp15
                 Profil noviProfil = new Profil();
                 noviProfil.Owner = this;
                 noviProfil.DataContext = dgClanovi.SelectedItem;
-                noviProfil.DataContext = dgKnjiga;
                 if (noviProfil.ShowDialog() == true)
                 {
                     KB.SaveChanges();
@@ -113,10 +112,6 @@ namespace WpfApp15
             
         }
 
-        private void txtPretraga_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }        
     }
 
 

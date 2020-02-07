@@ -49,11 +49,16 @@ namespace WpfApp15
             InitializeComponent();
 
             KB.dbKnjiga.ToList();
+            KB.dbIznajmljeno.ToList();
             dgBiblioteka.ItemsSource = KB.dbKnjiga.Local;
+            dgProfilIznajmljeno.ItemsSource = KB.dbIznajmljeno.Local;
 
-            KB.SaveChanges();
+            KB.SaveChanges(); 
 
             txtPretraga.DataContext = this;
+
+           // dgProfilIznajmljeno.ItemsSource = KB.dbIznajmljeno.Local;
+
 
 
         }
@@ -72,11 +77,15 @@ namespace WpfApp15
 
         private void Button_Iznajmi(object sender, RoutedEventArgs e)
         {
-            KB.dbIznajmljeno.Add(new Iznajmi(DataContext as Clanovi, dgBiblioteka.SelectedItem as Knjiga, DateTime.Now));
+            
+            KB.dbIznajmljeno.Add(new Iznajmi(DataContext as Clanovi, dgBiblioteka.SelectedItem as Knjiga,cal.SelectedDate.Value));
             KB.SaveChanges();
+
 
         }
 
-        
+        private void Vrati_Click(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }
