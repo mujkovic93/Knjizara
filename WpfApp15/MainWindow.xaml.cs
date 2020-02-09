@@ -56,8 +56,8 @@ namespace WpfApp15
             InitializeComponent();
             KB.dbKnjiga.ToList();
             KB.dbClanovi.ToList();
-            //KB.dbKnjiga.Add(new Knjiga("A001", "Rat", "Irfan", "2020", "Da"));
-            //KB.dbKnjiga.Add(new Knjiga("A002", "Peacekeeper", "Ruza", "1950", "Ne"));
+            //KB.dbKnjiga.Add(new Knjiga("A001", "Rat", "Irfan", "2020", 10));
+            //KB.dbKnjiga.Add(new Knjiga("A002", "Peacekeeper", "Ruza", "1950", 15));
             //KB.dbClanovi.Add(new Clanovi("Armin", "Mujkovic", "//", "Save Kovacevica 192"));
             //KB.dbClanovi.Add(new Clanovi("Edin", "Kurtanovic", "//", "Stevana Nemanje e/27"));
 
@@ -125,7 +125,7 @@ namespace WpfApp15
         {
             modelBuilder.Entity<Knjiga>().HasKey(k => k.ISBN);
             modelBuilder.Entity<Clanovi>().HasKey(c => c.ID);
-            modelBuilder.Entity<Iznajmi>().HasKey(i => i.ID);
+            modelBuilder.Entity<Iznajmi>().HasKey(i => i.ID_iznajmio);
         }
 
 

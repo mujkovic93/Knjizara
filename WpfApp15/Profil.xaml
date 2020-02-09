@@ -46,7 +46,7 @@
 
                     </DataGrid>
                     <Button Name="Vrati" Content="Vrati" Click="Vrati_Click"></Button>
-                    <Button Content="Iznajmi" Click="Button_Iznajmi"></Button>
+                    <Button Name="Iznajmi" Content="Iznajmi" Click="Button_Iznajmi"></Button>
                 </UniformGrid>
             </TabItem>
         </TabControl>

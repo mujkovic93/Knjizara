@@ -77,15 +77,34 @@ namespace WpfApp15
 
         private void Button_Iznajmi(object sender, RoutedEventArgs e)
         {
-            
-            KB.dbIznajmljeno.Add(new Iznajmi(DataContext as Clanovi, dgBiblioteka.SelectedItem as Knjiga,cal.SelectedDate.Value));
-            KB.SaveChanges();
+            if (dgBiblioteka.SelectedItem != null && cal.SelectedDate !=null)
+            {
+                (dgBiblioteka.SelectedItem as Knjiga).Kolicina -= 1;
+                dgBiblioteka.ItemsSource = KB.dbKnjiga.Where(k => k.Kolicina != 0).ToList();
 
+                KB.dbIznajmljeno.Add(new Iznajmi(DataContext as Clanovi, dgBiblioteka.SelectedItem as Knjiga, cal.SelectedDate.Value));
+
+                KB.SaveChanges();
+            }
+            else
+            {
+                MessageBox.Show("Selektujte datum rezervacije i knjigu iz biblioteke");
+            }
 
         }
 
         private void Vrati_Click(object sender, RoutedEventArgs e)
         {
+            if (dgProfilIznajmljeno.SelectedItem != null)
+            {
+                KB.dbIznajmljeno.Remove(dgProfilIznajmljeno.SelectedItem as Iznajmi);
+
+                // ovde treba da vratimo kolicinu u Biblioteku 
+
+                KB.SaveChanges();
+            }
         }
+
+       
     }
 }
