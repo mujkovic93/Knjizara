@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp15"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+        
     <DockPanel>
         <StackPanel DockPanel.Dock="Top">
             <TextBox Name="txtPretraga" Text="{Binding Pretraga,UpdateSourceTrigger=PropertyChanged}" FontSize="42" TextChanged="txtPretraga_TextChanged"></TextBox>
@@ -14,7 +16,7 @@
                 <Button Content="Izbrisi" FontSize="42"/>
             </StackPanel>
         </StackPanel>
-        <TabControl>
+        <TabControl TabStripPlacement="Left">
             <TabItem Name="tabClanovi" Header="Clanovi" FontSize="32">
                 <DataGrid Name="dgClanovi" FontSize="32" IsReadOnly="True" SelectionMode="Single" ColumnWidth="*" MouseDoubleClick="dgClanovi_MouseDoubleClick"/>
                 
