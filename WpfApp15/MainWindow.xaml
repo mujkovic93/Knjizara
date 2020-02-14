@@ -10,7 +10,7 @@
         
     <DockPanel>
         <StackPanel DockPanel.Dock="Top">
-            <TextBox Name="txtPretraga" Text="{Binding Pretraga,UpdateSourceTrigger=PropertyChanged}" FontSize="42" TextChanged="txtPretraga_TextChanged"></TextBox>
+            <TextBox Name="txtPretraga" Text="{Binding Pretraga,UpdateSourceTrigger=PropertyChanged}" FontSize="42" ></TextBox>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Content="Dodaj" FontSize="42" Click="Dodaj_Click" Margin="0,0,10,0"/>
                 <Button Content="Izbrisi" FontSize="42"/>
@@ -18,8 +18,7 @@
         </StackPanel>
         <TabControl TabStripPlacement="Left">
             <TabItem Name="tabClanovi" Header="Clanovi" FontSize="32">
-                <DataGrid Name="dgClanovi" FontSize="32" IsReadOnly="True" SelectionMode="Single" ColumnWidth="*" MouseDoubleClick="dgClanovi_MouseDoubleClick"/>
-                
+                <DataGrid Name="dgClanovi" FontSize="32" IsReadOnly="True" SelectionMode="Single" ColumnWidth="*" MouseDoubleClick="dgClanovi_MouseDoubleClick"/>               
 
             </TabItem>
             <TabItem Header="Knjiga" FontSize="32">

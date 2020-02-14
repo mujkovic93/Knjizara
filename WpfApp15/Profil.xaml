@@ -37,7 +37,7 @@
                     
                     <Label Content=" Trenutno poseduje: " FontSize="32"  ></Label>
                     <Label Content=" Biblioteka: " FontSize="32" ></Label>
-                    <Calendar></Calendar>
+                    <Calendar Name="cal"></Calendar>
                     <TextBox Name="txtPretraga" Text="{Binding Pretraga,UpdateSourceTrigger=PropertyChanged}" Opacity="0.3" TextAlignment="Center"></TextBox>
                     <DataGrid Name="dgProfilIznajmljeno" FontSize="32" IsReadOnly="True" SelectionMode="Single" ColumnWidth="*" >
                         
@@ -45,8 +45,8 @@
                     <DataGrid Name="dgBiblioteka" FontSize="32" IsReadOnly="True" SelectionMode="Single" ColumnWidth="*" >
 
                     </DataGrid>
-                    <Button Content="Vrati"></Button>
-                    <Button Content="Iznajmi" Click="Button_Iznajmi"></Button>
+                    <Button Name="Vrati" Content="Vrati" Click="Vrati_Click"></Button>
+                    <Button Name="Iznajmi" Content="Iznajmi" Click="Button_Iznajmi"></Button>
                 </UniformGrid>
             </TabItem>
         </TabControl>
